@@ -1,4 +1,5 @@
 package br.com.ranklist.ranking.form;
+import jakarta.annotation.Nonnull;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import br.com.ranklist.ranking.models.Jogo;
@@ -56,7 +57,7 @@ public class AtualizacaoJogoForm {
         this.tier = tier;
     }
 
-    public Jogo atualizar(Long id, JogoRepository jogoRepository) {
+    public Jogo atualizar(@Nonnull Long id, JogoRepository jogoRepository) {
         Jogo jogo = jogoRepository.getReferenceById(id);
         jogo.setNome(this.nome);
         jogo.setCategoria(this.categoria);
